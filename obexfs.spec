@@ -1,4 +1,3 @@
-#
 Summary:	ObexFTP filesystem
 Summary(pl):	System plików ObexFTP
 Name:		obexfs
@@ -11,6 +10,7 @@ Source0:	http://triq.net/obexftp/%{name}-%{version}.tar.gz
 URL:		http://openobex.triq.net/
 BuildRequires:	libfuse-devel >= 2.4
 BuildRequires:	obexftp-devel >= 0.20
+BuildRequires:	rpmbuild(macros) >= 1.315
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define         filterout_ld    (-Wl,)?--as-needed
@@ -36,7 +36,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
