@@ -8,12 +8,13 @@ Group:		Applications/System
 Source0:	http://triq.net/obexftp/%{name}-%{version}.tar.gz
 # Source0-md5:	c8815a6347b0fa2d4fe1f250d88f4e58
 URL:		http://openobex.triq.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libfuse-devel >= 2.4
 BuildRequires:	obexftp-devel >= 0.20
-BuildRequires:	rpmbuild(macros) >= 1.315
+BuildRequires:	pkgconfig
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define         filterout_ld    (-Wl,)?--as-needed
 
 %description
 FUSE based filesystem using ObexFTP.
@@ -24,7 +25,13 @@ System plików u¿ywaj±cy ObexFTP oparty na FUSE.
 %prep
 %setup -q
 
+%{__sed} -i -e 's/-O2 //' configure.in
+
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
