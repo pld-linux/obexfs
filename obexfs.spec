@@ -1,5 +1,5 @@
 Summary:	ObexFTP filesystem
-Summary(pl.UTF-8):   System plików ObexFTP
+Summary(pl.UTF-8):	System plików ObexFTP
 Name:		obexfs
 Version:	0.10
 Release:	1
