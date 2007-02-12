@@ -1,5 +1,5 @@
 Summary:	ObexFTP filesystem
-Summary(pl):	System plików ObexFTP
+Summary(pl.UTF-8):   System plikÃ³w ObexFTP
 Name:		obexfs
 Version:	0.10
 Release:	1
@@ -19,8 +19,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 FUSE based filesystem using ObexFTP.
 
-%description -l pl
-System plików u¿ywaj±cy ObexFTP oparty na FUSE.
+%description -l pl.UTF-8
+System plikÃ³w uÅ¼ywajÄ…cy ObexFTP oparty na FUSE.
 
 %prep
 %setup -q
