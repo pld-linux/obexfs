@@ -1,17 +1,17 @@
 Summary:	ObexFTP filesystem
 Summary(pl.UTF-8):	System plików ObexFTP
 Name:		obexfs
-Version:	0.10
-Release:	2
-License:	GPL v2
+Version:	0.11
+Release:	1
+License:	GPL v2+
 Group:		Applications/System
 Source0:	http://triq.net/obexftp/%{name}-%{version}.tar.gz
-# Source0-md5:	c8815a6347b0fa2d4fe1f250d88f4e58
+# Source0-md5:	0980ad75b27e15347c7621ca525ba36b
 URL:		http://openobex.triq.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libfuse-devel >= 2.4
-BuildRequires:	obexftp-devel >= 0.20
+BuildRequires:	obexftp-devel >= 0.22
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,7 +25,7 @@ System plików używający ObexFTP oparty na FUSE.
 %prep
 %setup -q
 
-%{__sed} -i -e 's/-O2 //' configure.in
+%{__sed} -i -e 's/-O2 //' fuse/Makefile.am
 
 %build
 %{__aclocal}
@@ -46,5 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/obexautofs
+%attr(755,root,root) %{_bindir}/obexfs
