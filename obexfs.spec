@@ -2,7 +2,7 @@ Summary:	ObexFTP filesystem
 Summary(pl.UTF-8):	System plików ObexFTP
 Name:		obexfs
 Version:	0.12
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://triq.net/obexftp/%{name}-%{version}.tar.gz
